@@ -9,7 +9,7 @@ public class PositionType {
     private String value;
 
     public PositionType() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
@@ -21,7 +21,7 @@ public class PositionType {
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
 
     @Override
-    public String toString() { return value; }
+    public String toString() { return value != null ? value : "Data not available"; }
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
     //  their id fields match.

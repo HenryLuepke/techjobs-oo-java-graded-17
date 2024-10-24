@@ -9,8 +9,9 @@ public class Employer {
     private String value;
 
     public Employer() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
+        this.value = null;
     }
 
     public Employer(String value) {
@@ -22,7 +23,7 @@ public class Employer {
 
     @Override
     public String toString() {
-        return value;
+        return value != null ? value : "Data not available";
     }
 
     @Override

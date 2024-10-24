@@ -9,7 +9,7 @@ public class Location {
     private String value;
 
     public Location() {
-        id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
@@ -26,7 +26,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return value;
+        return value != null ? value : "Data not available";
     }
 
     @Override

@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private int id;
@@ -45,6 +47,35 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+//    private String dataAvailabilityCheck(Object data) {
+//        if (data != null) {
+//            return data.toString();
+//        }
+//        else return "Data not available";
+//    }; ask why this wasn't working, changing the conditional to be (data.toString() != null) would throw an error saying
+//          that data was null but as is would return data.toString() which was null
+
+    private String dataAvailabilityCheck(String data) {
+        if (data == "") {
+            return "Data not available";
+        }
+        else return data.toString();
+    };
+
+    @Override
+    public String toString() {
+
+        String dataString = "";
+        dataString += System.lineSeparator();
+        dataString += "ID: " + this.id + lineSeparator();
+        dataString += "Name: " + dataAvailabilityCheck(this.name) + System.lineSeparator();
+        dataString += "Employer: " + dataAvailabilityCheck(this.employer.toString()) + System.lineSeparator();
+        dataString += "Location: " + dataAvailabilityCheck(this.location.toString()) + System.lineSeparator();
+        dataString += "Position Type: " + dataAvailabilityCheck(this.positionType.toString()) + System.lineSeparator();
+        dataString += "Core Competency: " + dataAvailabilityCheck(this.coreCompetency.toString()) + System.lineSeparator();
+        return dataString;
     }
 
 
